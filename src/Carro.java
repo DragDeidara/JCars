@@ -22,7 +22,11 @@ public class Carro {
 		AnoAquisição = anoAquisição;
 		PreçoAquisição = preçoAquisição;
 	}
-
+	public String toString() {
+		return Matricula;
+		
+	}
+	
 	public String getMarca() {
 		return Marca;
 	}
