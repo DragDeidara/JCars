@@ -108,7 +108,7 @@ public class TP {
 			System.out.println(e.getMessage());
 		}
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 640, 361);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new CardLayout(0, 0));
 
@@ -119,16 +119,16 @@ public class TP {
 
 		JLabel label = new JLabel("Login");
 		label.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		label.setBounds(160, 66, 65, 17);
+		label.setBounds(223, 91, 65, 17);
 		panel.add(label);
 
 		JLabel label_1 = new JLabel("Password");
 		label_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		label_1.setBounds(160, 109, 65, 17);
+		label_1.setBounds(223, 161, 65, 17);
 		panel.add(label_1);
 
 		textField = new JTextField();
-		textField.setBounds(279, 66, 86, 20);
+		textField.setBounds(376, 86, 112, 30);
 		textField.setColumns(10);
 		panel.add(textField);
 
@@ -179,7 +179,7 @@ public class TP {
 			
 			
 		});
-		button.setBounds(308, 152, 57, 23);
+		button.setBounds(434, 226, 57, 23);
 		panel.add(button);
 
 
@@ -193,33 +193,33 @@ public class TP {
 
 			}
 		});
-		button_1.setBounds(160, 152, 77, 23);
+		button_1.setBounds(223, 226, 77, 23);
 		panel.add(button_1);
 
 		passwordField = new JPasswordField();
-		passwordField.setBounds(279, 109, 86, 20);
+		passwordField.setBounds(376, 148, 112, 30);
 		panel.add(passwordField);
 		
 		JLabel lblNewLabel = new JLabel("");
 		Image imagens = new ImageIcon(this.getClass().getResource("/cars-icon.png")).getImage();
 		lblNewLabel.setIcon(new ImageIcon(imagens));
-		lblNewLabel.setBounds(10, 57, 128, 128);
+		lblNewLabel.setBounds(38, 95, 128, 128);
 		panel.add(lblNewLabel);
 
 		panel_1 = new JPanel();
-		frame.getContentPane().add(panel_1, "name_606776259909658");
+	 	frame.getContentPane().add(panel_1, "name_606776259909658");
 		panel_1.setLayout(null);
 
-		JLabel lblListaVeiculos = new JLabel("Lista dos carros");
+		JLabel lblListaVeiculos = new JLabel("Lista de carros");
 		lblListaVeiculos.setFont(new Font("Trebuchet MS", Font.PLAIN, 16));
-		lblListaVeiculos.setBounds(45, 25, 144, 14);
+		lblListaVeiculos.setBounds(248, 25, 144, 14);
 		panel_1.add(lblListaVeiculos);
 		listModel = new DefaultListModel<Carro>(); 
 		fillList("SELECT * FROM Carro");
 		list = new JList<Carro>(listModel);
 
 		JList<Carro> list = new JList<Carro>(listModel);
-		list.setBounds(47, 59, 345, 147);
+		list.setBounds(47, 59, 523, 147);
 		panel_1.add(list);
 
 		JButton btnNovo = new JButton("Novo");
@@ -233,7 +233,7 @@ public class TP {
 			}
 		});
 
-		btnNovo.setBounds(43, 217, 89, 23);
+		btnNovo.setBounds(72, 229, 104, 33);
 		panel_1.add(btnNovo);
 
 		JButton btnApagar = new JButton("Apagar");
@@ -264,7 +264,7 @@ public class TP {
 			}	
 		});
 
-		btnApagar.setBounds(303, 217, 89, 23);
+		btnApagar.setBounds(431, 229, 99, 33);
 		panel_1.add(btnApagar);
 
 		panel_2 = new JPanel();
@@ -273,33 +273,33 @@ public class TP {
 
 
 		JLabel lblMarca = new JLabel("Marca");
-		lblMarca.setBounds(10, 29, 46, 14);
+		lblMarca.setBounds(76, 46, 46, 14);
 		panel_2.add(lblMarca);
 
 		JLabel lblModelo = new JLabel("Modelo");
-		lblModelo.setBounds(10, 58, 46, 14);
+		lblModelo.setBounds(76, 71, 46, 14);
 		panel_2.add(lblModelo);
 
 		JLabel lblCor = new JLabel("Cor");
-		lblCor.setBounds(10, 83, 46, 14);
+		lblCor.setBounds(76, 96, 46, 14);
 		panel_2.add(lblCor);
 
 		JLabel lblCilindrada = new JLabel("Cilindrada");
-		lblCilindrada.setBounds(10, 111, 66, 14);
+		lblCilindrada.setBounds(76, 132, 66, 14);
 		panel_2.add(lblCilindrada);
 
 		MARCA = new JTextField();
-		MARCA.setBounds(76, 26, 203, 20);
+		MARCA.setBounds(223, 37, 203, 20);
 		panel_2.add(MARCA);
 		MARCA.setColumns(10);
 
 		MODELO = new JTextField();
-		MODELO.setBounds(76, 55, 203, 20);
+		MODELO.setBounds(223, 68, 203, 20);
 		panel_2.add(MODELO);
 		MODELO.setColumns(10);
 
 		CILINDRADA = new JTextField();
-		CILINDRADA.setBounds(76, 108, 203, 20);
+		CILINDRADA.setBounds(223, 129, 203, 20);
 		panel_2.add(CILINDRADA);
 		CILINDRADA.setColumns(10);
 
@@ -311,52 +311,52 @@ public class TP {
 		COR.addItem("Verde");
 		COR.addItem("Vermelho");
 		COR.addItem("Azul");
-		COR.setBounds(74, 80, 74, 20);
+		COR.setBounds(223, 98, 74, 20);
 		panel_2.add(COR);
 
 		JLabel lblMatricula = new JLabel("Matricula");
-		lblMatricula.setBounds(10, 140, 56, 14);
+		lblMatricula.setBounds(76, 163, 56, 14);
 		panel_2.add(lblMatricula);
 
 		JLabel lblCombustivel = new JLabel("Combustivel");
-		lblCombustivel.setBounds(10, 165, 88, 14);
+		lblCombustivel.setBounds(76, 196, 88, 14);
 		panel_2.add(lblCombustivel);
 
 		JLabel lblAnoaquisio = new JLabel("Ano Aquisi\u00E7\u00E3o");
-		lblAnoaquisio.setBounds(10, 190, 88, 14);
+		lblAnoaquisio.setBounds(76, 229, 88, 14);
 		panel_2.add(lblAnoaquisio);
 
 		JLabel lblPreoAquisio = new JLabel("Pre\u00E7o Aquisi\u00E7\u00E3o");
-		lblPreoAquisio.setBounds(10, 222, 103, 14);
+		lblPreoAquisio.setBounds(76, 260, 103, 14);
 		panel_2.add(lblPreoAquisio);
 
 		rdbtnGasolio = new JRadioButton("Gasolio");
 		buttonGroup.add(rdbtnGasolio);
-		rdbtnGasolio.setBounds(86, 161, 74, 23);
+		rdbtnGasolio.setBounds(223, 192, 74, 23);
 		panel_2.add(rdbtnGasolio);
 
 		rdbtnGasolina = new JRadioButton("Gasolina");
 		buttonGroup.add(rdbtnGasolina);
-		rdbtnGasolina.setBounds(178, 161, 88, 23);
+		rdbtnGasolina.setBounds(303, 192, 88, 23);
 		panel_2.add(rdbtnGasolina);
 
 		rdbtnGpl = new JRadioButton("GPL");
 		buttonGroup.add(rdbtnGpl);
-		rdbtnGpl.setBounds(272, 161, 66, 23);
+		rdbtnGpl.setBounds(393, 192, 66, 23);
 		panel_2.add(rdbtnGpl);
 
 		MATRICULA = new JTextField();
-		MATRICULA.setBounds(76, 137, 86, 20);
+		MATRICULA.setBounds(223, 160, 203, 20);
 		panel_2.add(MATRICULA);
 		MATRICULA.setColumns(10);
 
 		ANO = new JTextField();
-		ANO.setBounds(123, 187, 82, 20);
+		ANO.setBounds(223, 226, 203, 20);
 		panel_2.add(ANO);
 		ANO.setColumns(10);
 
 		PRECO = new JTextField();
-		PRECO.setBounds(123, 219, 82, 20);
+		PRECO.setBounds(223, 257, 203, 20);
 		panel_2.add(PRECO);
 		PRECO.setColumns(10);
 
@@ -369,7 +369,7 @@ public class TP {
 			}
 		});
 
-		btnSair.setBounds(335, 218, 89, 23);
+		btnSair.setBounds(421, 288, 89, 23);
 		panel_2.add(btnSair);
 
 		JButton btnConfirmar = new JButton("Confirmar");
@@ -407,12 +407,12 @@ public class TP {
 			
 		});
 
-		btnConfirmar.setBounds(222, 218, 103, 23);
+		btnConfirmar.setBounds(223, 288, 103, 23);
 		panel_2.add(btnConfirmar);
 		
 		JLabel lblNovoCarro = new JLabel("A criar novo carro");
 		lblNovoCarro.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNovoCarro.setBounds(112, -13, 135, 42);
+		lblNovoCarro.setBounds(233, 0, 135, 42);
 		panel_2.add(lblNovoCarro);
 		
 		panel_3 = new JPanel();
@@ -420,47 +420,47 @@ public class TP {
 		panel_3.setLayout(null);
 		
 		JLabel lblCodigoReviso = new JLabel("Codigo revis\u00E3o");
-		lblCodigoReviso.setBounds(10, 26, 86, 14);
+		lblCodigoReviso.setBounds(103, 48, 86, 14);
 		panel_3.add(lblCodigoReviso);
 		
 		CODIGO = new JTextField();
-		CODIGO.setBounds(103, 23, 86, 20);
+		CODIGO.setBounds(216, 45, 111, 20);
 		panel_3.add(CODIGO);
 		CODIGO.setColumns(10);
 		
 		JLabel lblOficina = new JLabel("Oficina");
-		lblOficina.setBounds(10, 65, 46, 14);
+		lblOficina.setBounds(103, 91, 46, 14);
 		panel_3.add(lblOficina);
 		
 		OFICINA = new JTextField();
-		OFICINA.setBounds(103, 62, 86, 20);
+		OFICINA.setBounds(216, 88, 111, 20);
 		panel_3.add(OFICINA);
 		OFICINA.setColumns(10);
 		
 		JLabel lblDataDaReviso = new JLabel("Data da revis\u00E3o");
-		lblDataDaReviso.setBounds(10, 108, 86, 14);
+		lblDataDaReviso.setBounds(103, 133, 86, 14);
 		panel_3.add(lblDataDaReviso);
 		
 		DATA = new JTextField();
-		DATA.setBounds(103, 105, 86, 20);
+		DATA.setBounds(216, 130, 111, 20);
 		panel_3.add(DATA);
 		DATA.setColumns(10);
 		
 		JLabel lblObservaes = new JLabel("Observa\u00E7\u00F5es");
-		lblObservaes.setBounds(10, 152, 86, 14);
+		lblObservaes.setBounds(103, 178, 86, 14);
 		panel_3.add(lblObservaes);
 		
 		OBSERVACOES = new JTextField();
-		OBSERVACOES.setBounds(103, 136, 206, 35);
+		OBSERVACOES.setBounds(216, 175, 237, 20);
 		panel_3.add(OBSERVACOES);
 		OBSERVACOES.setColumns(10);
 		
 		JLabel lblValor = new JLabel("Valor");
-		lblValor.setBounds(10, 188, 46, 14);
+		lblValor.setBounds(111, 218, 46, 14);
 		panel_3.add(lblValor);
 		
 		VALOR = new JTextField();
-		VALOR.setBounds(103, 182, 86, 20);
+		VALOR.setBounds(216, 215, 111, 20);
 		panel_3.add(VALOR);
 		VALOR.setColumns(10);
 		
@@ -482,7 +482,7 @@ public class TP {
 				}
 			}
 		});
-		btnNewButton.setBounds(103, 216, 89, 23);
+		btnNewButton.setBounds(103, 265, 89, 23);
 		panel_3.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Voltar");
@@ -494,7 +494,7 @@ public class TP {
 				panel_2.setVisible(true);
 			}
 		});
-		btnNewButton_1.setBounds(222, 216, 89, 23);
+		btnNewButton_1.setBounds(238, 265, 89, 23);
 		panel_3.add(btnNewButton_1);
 		
 		JButton btnSair_1 = new JButton("Sair");
@@ -505,7 +505,7 @@ public class TP {
 				panel_1.setVisible(true);
 			}
 		});
-		btnSair_1.setBounds(335, 216, 89, 23);
+		btnSair_1.setBounds(364, 265, 89, 23);
 		panel_3.add(btnSair_1);
 		
 

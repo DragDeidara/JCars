@@ -23,7 +23,7 @@ public class Carro {
 		PreçoAquisição = preçoAquisição;
 	}
 	public String toString() {
-		return Matricula;
+		return " Matricula - " +Matricula + "       Marca - " + Marca + "         Modelo -" + Modelo +"";
 		
 	}
 	
