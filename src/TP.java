@@ -46,6 +46,7 @@ public class TP {
 	private JPanel panel_1;
 	private JPanel panel_2;
 	private JPanel panel_3;
+	private JPanel panel_4;
 	private JPasswordField passwordField;
 	private static JList<Carro> list;
 	private DefaultListModel<Carro> listModel;
@@ -65,6 +66,10 @@ public class TP {
 	private JTextField DATA;
 	private JTextField OBSERVACOES;
 	private JTextField VALOR;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField_4;
 
 	/**
 	 * Launch the application.
@@ -219,7 +224,7 @@ public class TP {
 		list = new JList<Carro>(listModel);
 
 		JList<Carro> list = new JList<Carro>(listModel);
-		list.setBounds(47, 59, 523, 147);
+		list.setBounds(55, 60, 523, 147);
 		panel_1.add(list);
 
 		JButton btnNovo = new JButton("Novo");
@@ -264,8 +269,21 @@ public class TP {
 			}	
 		});
 
-		btnApagar.setBounds(431, 229, 99, 33);
+		btnApagar.setBounds(270, 229, 99, 33);
 		panel_1.add(btnApagar);
+		
+		JButton btnTaxa = new JButton("Taxa");
+		btnTaxa.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				
+				panel_1.setVisible(false);
+				panel_4.setVisible(true);
+				
+			}
+		});
+		btnTaxa.setBounds(470, 229, 89, 33);
+		panel_1.add(btnTaxa);
 
 		panel_2 = new JPanel();
 		frame.getContentPane().add(panel_2, "name_606776269732388");
@@ -376,10 +394,16 @@ public class TP {
 		btnConfirmar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
+				
+				
+				if(MARCA.getText().isEmpty() || MODELO.getText().isEmpty() || CILINDRADA.getText().isEmpty() 
+						|| MATRICULA.getText().isEmpty() || ANO.getText().isEmpty() || PRECO.getText().isEmpty()){
+					JOptionPane.showMessageDialog(null, "Campos em falta");
+				}
+				else{
+					
 				panel_2.setVisible(false);
 				panel_3.setVisible(true);
-				
-				
 
 				String radioB = null;
 
@@ -404,7 +428,7 @@ public class TP {
 				}
 
 			}
-			
+			}
 		});
 
 		btnConfirmar.setBounds(223, 288, 103, 23);
@@ -456,7 +480,7 @@ public class TP {
 		OBSERVACOES.setColumns(10);
 		
 		JLabel lblValor = new JLabel("Valor");
-		lblValor.setBounds(111, 218, 46, 14);
+		lblValor.setBounds(103, 218, 46, 14);
 		panel_3.add(lblValor);
 		
 		VALOR = new JTextField();
@@ -464,10 +488,17 @@ public class TP {
 		panel_3.add(VALOR);
 		VALOR.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Concluir");
+		JButton btnNewButton = new JButton("Confirmar");
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
+				
+				if(CODIGO.getText().isEmpty() || OFICINA.getText().isEmpty() || DATA.getText().isEmpty() 
+						|| OBSERVACOES.getText().isEmpty() || VALOR.getText().isEmpty()){
+					JOptionPane.showMessageDialog(null, "Campos em falta");
+				}
+					
+					else{
 				panel_3.setVisible(false);
 				panel_1.setVisible(true);
 				
@@ -481,6 +512,7 @@ public class TP {
 					e1.printStackTrace();
 				}
 			}
+			}					
 		});
 		btnNewButton.setBounds(103, 265, 89, 23);
 		panel_3.add(btnNewButton);
@@ -507,6 +539,58 @@ public class TP {
 		});
 		btnSair_1.setBounds(364, 265, 89, 23);
 		panel_3.add(btnSair_1);
+		
+	    panel_4 = new JPanel();
+		frame.getContentPane().add(panel_4, "name_154598225556850");
+		panel_4.setLayout(null);
+		
+		JLabel lblMatricula_1 = new JLabel("Matricula");
+		lblMatricula_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblMatricula_1.setBounds(90, 56, 80, 14);
+		panel_4.add(lblMatricula_1);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(240, 55, 177, 20);
+		panel_4.add(textField_1);
+		textField_1.setColumns(10);
+		
+		JLabel lblValor_1 = new JLabel("Valor");
+		lblValor_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblValor_1.setBounds(91, 107, 46, 14);
+		panel_4.add(lblValor_1);
+		
+		JLabel lblData = new JLabel("Data");
+		lblData.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblData.setBounds(91, 159, 46, 14);
+		panel_4.add(lblData);
+		
+		JLabel lblValidade = new JLabel("Validade");
+		lblValidade.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblValidade.setBounds(90, 209, 80, 14);
+		panel_4.add(lblValidade);
+		
+		textField_2 = new JTextField();
+		textField_2.setBounds(240, 106, 177, 20);
+		panel_4.add(textField_2);
+		textField_2.setColumns(10);
+		
+		textField_3 = new JTextField();
+		textField_3.setBounds(240, 158, 177, 20);
+		panel_4.add(textField_3);
+		textField_3.setColumns(10);
+		
+		textField_4 = new JTextField();
+		textField_4.setBounds(240, 208, 177, 20);
+		panel_4.add(textField_4);
+		textField_4.setColumns(10);
+		
+		JButton btnConfirmar_1 = new JButton("Confirmar");
+		btnConfirmar_1.setBounds(81, 268, 89, 23);
+		panel_4.add(btnConfirmar_1);
+		
+		JButton btnSair_2 = new JButton("Sair");
+		btnSair_2.setBounds(328, 268, 89, 23);
+		panel_4.add(btnSair_2);
 		
 
 		panel_2.setVisible(false);
