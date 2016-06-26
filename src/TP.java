@@ -66,10 +66,10 @@ public class TP {
 	private JTextField DATA;
 	private JTextField OBSERVACOES;
 	private JTextField VALOR;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
+	private JTextField MATRICULa;
+	private JTextField VALOr;
+	private JTextField DATa;
+	private JTextField VALIDADe;
 
 	/**
 	 * Launch the application.
@@ -549,10 +549,10 @@ public class TP {
 		lblMatricula_1.setBounds(90, 56, 80, 14);
 		panel_4.add(lblMatricula_1);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(240, 55, 177, 20);
-		panel_4.add(textField_1);
-		textField_1.setColumns(10);
+		MATRICULa = new JTextField();
+		MATRICULa.setBounds(240, 55, 177, 20);
+		panel_4.add(MATRICULa);
+		MATRICULa.setColumns(10);
 		
 		JLabel lblValor_1 = new JLabel("Valor");
 		lblValor_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -569,26 +569,49 @@ public class TP {
 		lblValidade.setBounds(90, 209, 80, 14);
 		panel_4.add(lblValidade);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(240, 106, 177, 20);
-		panel_4.add(textField_2);
-		textField_2.setColumns(10);
+		VALOr = new JTextField();
+		VALOr.setBounds(240, 106, 177, 20);
+		panel_4.add(VALOr);
+		VALOr.setColumns(10);
 		
-		textField_3 = new JTextField();
-		textField_3.setBounds(240, 158, 177, 20);
-		panel_4.add(textField_3);
-		textField_3.setColumns(10);
+		DATa = new JTextField();
+		DATa.setBounds(240, 158, 177, 20);
+		panel_4.add(DATa);
+		DATa.setColumns(10);
 		
-		textField_4 = new JTextField();
-		textField_4.setBounds(240, 208, 177, 20);
-		panel_4.add(textField_4);
-		textField_4.setColumns(10);
+		VALIDADe = new JTextField();
+		VALIDADe.setBounds(240, 208, 177, 20);
+		panel_4.add(VALIDADe);
+		VALIDADe.setColumns(10);
 		
 		JButton btnConfirmar_1 = new JButton("Confirmar");
-		btnConfirmar_1.setBounds(81, 268, 89, 23);
+		btnConfirmar_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				
+				String sql= "INSERT INTO Taxa(Matricula, Valor, Data, Validade) VALUES "
+						+ " ('"+ MATRICULa.getText() + "','" + VALOr.getText() + "','" + DATa.getText() + "','" + VALIDADe.getText()+"')"; 
+				System.out.println(sql);
+				try {
+					stmt.executeUpdate(sql);
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+		btnConfirmar_1.setBounds(81, 268, 106, 23);
 		panel_4.add(btnConfirmar_1);
 		
 		JButton btnSair_2 = new JButton("Sair");
+		btnSair_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				panel_4.setVisible(false);
+				panel_1.setVisible(true);
+
+			}
+		});
 		btnSair_2.setBounds(328, 268, 89, 23);
 		panel_4.add(btnSair_2);
 		
